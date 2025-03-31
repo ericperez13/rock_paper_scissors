@@ -1,0 +1,5 @@
+user_choice = input("Welcome to Rock, Paper Scissors. Would you like to go first? yes/no ")
+if user_choice == 'yes' or 'Yes':
+    user_weapon = input("Great! Select your weapon of choice: (R)ock, (P)aper, or (S)cissors? ")
+    while user_weapon != 'R' or 'r' and user_weapon != 'P' or 'p' and user_weapon != 'S' or 's':
+        print("Nice try, but " + user_weapon + " isn't a weapon in this battle! Try again")
