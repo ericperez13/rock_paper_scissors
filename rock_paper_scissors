@@ -1,19 +1,25 @@
 import random
 
-weapon_choice = ['Rock','Paper','Scissors']
-
 user_choice = input("Welcome to Rock, Paper, Scissors. Would you like to go first? yes/no ")
 if user_choice.lower() == 'yes':
     user_weapon = input("Great! Select your weapon of choice: (R)ock, (P)aper, or (S)cissors? ")
-    while user_weapon.lower() != 'r' and user_weapon.lower() != 'p' and user_weapon.lower() != 's':
+    while user_weapon.lower() != 'rock' and user_weapon.lower() != 'paper' and user_weapon.lower() != 'scissors':
         print("Nice try, but " + user_weapon + " isn't a weapon in this battle! Try again.")
         user_weapon = input("Choose your weapon: (R)ock, (P)aper, or (S)cissors? ")
 
 print("Nice choice! Now the computer is choosing...")
-print(".")
-print("..")
-print("...")
 
+weapon_choice = ['Rock','Paper','Scissors']
 computer_choice = print(random.choice(weapon_choice))
 
+
+if computer_choice == user_choice:
+    print("That's a tie.")
+elif(
+    (user_weapon.lower() == 'r' and computer_choice == 's') or \
+    (user_weapon.lower() == 'p' and computer_choice == 'r') or \
+    (user_weapon.lower() == 's' and computer_choice == 'p')):
+    print("Cool. You defeated a machine that makes random choices...")
+else:
+    print("Oof... You just got outplayed by a random option generator.")
 
